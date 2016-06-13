@@ -1,14 +1,12 @@
 package me.botsko.prism.actionlibs;
 
-import java.util.List;
-
+import me.botsko.prism.Prism;
 import org.bukkit.GameMode;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
-import me.botsko.elixr.TypeUtils;
-import me.botsko.prism.Prism;
+import java.util.List;
 
 public class Ignore {
 
@@ -68,13 +66,8 @@ public class Ignore {
         if( actionTypeName.contains( "prism" ) ) { return true; }
 
         // Should we ignore this action type?
-        if( ( TypeUtils.subStrOccurences( actionTypeName, "-" ) == 1 && !plugin.getConfig().getBoolean(
-                "prism.tracking." + actionTypeName ) ) ) {
-            // Prism.debug("Ignoring action type " + actionTypeName);
-            return false;
-        }
+        return plugin.getConfig().getBoolean("prism.tracking." + actionTypeName);
 
-        return true;
     }
 
     /**
