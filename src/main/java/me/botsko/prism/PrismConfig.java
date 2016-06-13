@@ -1,12 +1,12 @@
 package me.botsko.prism;
 
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.Plugin;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.Plugin;
 
 public class PrismConfig extends ConfigBase {
 
@@ -221,7 +221,7 @@ public class PrismConfig extends ConfigBase {
         config.addDefault( "prism.tracking.spawnegg-use", true );
         config.addDefault( "prism.tracking.tnt-explode", true );
         config.addDefault( "prism.tracking.tnt-prime", true );
-        config.addDefault( "prism.tracking.tree-grow", true );
+        config.addDefault( "prism.tracking.tree-grow", false ); // Cauldron - disable by default
         config.addDefault( "prism.tracking.vehicle-break", true );
         config.addDefault( "prism.tracking.vehicle-enter", true );
         config.addDefault( "prism.tracking.vehicle-exit", true );
